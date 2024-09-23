@@ -6,4 +6,3 @@ def test_quest_can_see_login_or_registration(browser):
     page = LoginPage(browser, link)
     page.open()
     page.should_be_login_page()
-    
