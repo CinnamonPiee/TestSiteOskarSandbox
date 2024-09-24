@@ -1,5 +1,3 @@
-from urllib.request import parse_keqv_list
-
 from .pages.main_page import MainPage
 from .pages.login_page import LoginPage
 
