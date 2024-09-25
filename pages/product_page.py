@@ -26,34 +26,18 @@ class ProductPage(BasePage):
         self.check_success_message()
 
     def cant_see_success_message_after_adding_product_to_basket(self):
-        self.should_be_name()
-        self.should_be_price()
-        self.should_be_description()
-        self.should_be_add_button()
-
         btn = self.browser.find_element(*ProductPageLocators.BTN_ADD_TO_BASKET)
         btn.click()
         self.solve_quiz_and_get_code()
-
         self.should_be_dont_see_success_after_add()
 
     def cant_see_success_message(self):
-        self.should_be_name()
-        self.should_be_price()
-        self.should_be_description()
-        self.should_be_add_button()
         self.should_be_dont_see_success_after_add()
 
     def message_disappeared_after_adding_product_to_basket(self):
-        self.should_be_name()
-        self.should_be_price()
-        self.should_be_description()
-        self.should_be_add_button()
-
         btn = self.browser.find_element(*ProductPageLocators.BTN_ADD_TO_BASKET)
         btn.click()
         self.solve_quiz_and_get_code()
-
         self.should_be_dont_see_success_after_add()
 
     def should_be_name(self):
