@@ -3,6 +3,9 @@ import time
 from .base_page import BasePage
 from .locators import ProductPageLocators
 
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+
 
 class ProductPage(BasePage):
     product_name = ''
@@ -35,6 +38,7 @@ class ProductPage(BasePage):
         self.product_description = self.browser.find_element(*ProductPageLocators.PRODUCT_DESCRIPTION).text
 
     def should_be_success(self):
+        WebDriverWait(self.browser, 10).until(ec.visibility_of_element_located(ProductPageLocators.SUCCESS_MESSAGES))
         assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGES), "Message of Success added product in " \
                                                                                "basket not found "
 
