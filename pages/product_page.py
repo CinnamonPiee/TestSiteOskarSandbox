@@ -25,6 +25,37 @@ class ProductPage(BasePage):
         self.should_be_success()
         self.check_success_message()
 
+    def cant_see_success_message_after_adding_product_to_basket(self):
+        self.should_be_name()
+        self.should_be_price()
+        self.should_be_description()
+        self.should_be_add_button()
+
+        btn = self.browser.find_element(*ProductPageLocators.BTN_ADD_TO_BASKET)
+        btn.click()
+        self.solve_quiz_and_get_code()
+
+        self.should_be_dont_see_success_after_add()
+
+    def cant_see_success_message(self):
+        self.should_be_name()
+        self.should_be_price()
+        self.should_be_description()
+        self.should_be_add_button()
+        self.should_be_dont_see_success_after_add()
+
+    def message_disappeared_after_adding_product_to_basket(self):
+        self.should_be_name()
+        self.should_be_price()
+        self.should_be_description()
+        self.should_be_add_button()
+
+        btn = self.browser.find_element(*ProductPageLocators.BTN_ADD_TO_BASKET)
+        btn.click()
+        self.solve_quiz_and_get_code()
+
+        self.should_be_dont_see_success_after_add()
+
     def should_be_name(self):
         assert self.is_element_present(*ProductPageLocators.PRODUCT_NAME), "Name of product not found"
         self.product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
@@ -51,3 +82,11 @@ class ProductPage(BasePage):
 
         assert self.product_name == msg_lst[0].text, "Wrong name product added to basket"
         # assert self.product_price == msg_lst[-1].text, "Wrong price product added to basket"
+
+    def should_be_dont_see_success_after_add(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGES), "Message of Success added product in " \
+                                                                                   "basket not found "
+
+    def should_be_message_disappeared_after_adding_product_in_basket(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGES), "Message of Success added product in " \
+                                                                                   "basket not found "
