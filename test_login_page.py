@@ -5,4 +5,6 @@ def test_quest_can_see_login_or_registration(browser):
     link = "https://selenium1py.pythonanywhere.com/ru/accounts/login/"
     page = LoginPage(browser, link)
     page.open()
-    page.should_be_login_page()
+    page.should_be_login_link()
+    page.should_be_login_form()
+    page.should_be_register_form()
