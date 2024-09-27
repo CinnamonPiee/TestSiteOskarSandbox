@@ -3,15 +3,22 @@ from selenium.webdriver.common.by import By
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inv")
     BASKET_LINK = (By.CSS_SELECTOR, "div.basket-mini .btn")
-    BASKET_LINK_INVALID = (By.CSS_SELECTOR, "div.basket-mini .btn_inv")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
     LOGOUT_LINK = (By.CSS_SELECTOR, "#logout_link")
+    LANGUAGE_FORM = (By.CSS_SELECTOR, "#language_selector .form-control")
+    LANGUAGE_LINK = (By.CSS_SELECTOR, "#language_selector .btn")
+    NAVBAR_FORM = (By.CSS_SELECTOR, ".navbar-right #id_q")
+    NAVBAR_LINK = (By.CSS_SELECTOR, ".navbar-right .btn")
+    MAIN_PAGE_LINK = (By.CSS_SELECTOR, ".container-fluid a")
+    NAVBAR_BROWSE = (By.CSS_SELECTOR, "#browse .dropdown-toggle")
 
 
 class MainPageLocators():
-    pass
+    NAVBAR_DROPDOWN_MENU_CATALOGUE = (By.CSS_SELECTOR, ".dropdown-menu [href='/ru/catalogue/']")
+    NAVBAR_DROPDOWN_MENU_CLOTHING = (By.CSS_SELECTOR, ".dropdown-menu [href='/ru/catalogue/category/clothing_1/']")
+    NAVBAR_DROPDOWN_MENU_BOOKS = (By.CSS_SELECTOR, ".dropdown-menu [href='/ru/catalogue/category/books_2/']")
+    NAVBAR_DROPDOWN_MENU_OFFERS = (By.CSS_SELECTOR, ".dropdown-menu [href='/ru/offers/']")
 
 
 class LoginPageLocators():
