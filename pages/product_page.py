@@ -27,14 +27,13 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ProductPageLocators.PRODUCT_DESCRIPTION), "Description of product not found"
         self.product_description = self.browser.find_element(*ProductPageLocators.PRODUCT_DESCRIPTION).text
 
+    def should_be_add_button(self):
+        assert self.is_element_present(*ProductPageLocators.BTN_ADD_TO_BASKET), "Button 'Add to basket' is not " \
+                                                                                "presented "
     def should_be_success(self):
         WebDriverWait(self.browser, 10).until(ec.visibility_of_element_located(ProductPageLocators.SUCCESS_MESSAGES))
         assert self.is_element_present(*ProductPageLocators.SUCCESS_MESSAGES), "Message of Success added product in " \
                                                                                "basket not found "
-
-    def should_be_add_button(self):
-        assert self.is_element_present(*ProductPageLocators.BTN_ADD_TO_BASKET), "Button 'Add to basket' is not " \
-                                                                                "presented "
 
     def check_success_message(self):
         msg_lst = self.browser.find_elements(*ProductPageLocators.SUCCESS_MESSAGES)
@@ -42,10 +41,10 @@ class ProductPage(BasePage):
         assert self.product_name == msg_lst[0].text, "Wrong name product added to basket"
         # assert self.product_price == msg_lst[-1].text, "Wrong price product added to basket"
 
-    def should_be_dont_see_success_after_add(self):
+    def should_be_dont_see_success_after_add_product_in_basket(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGES), "Message of Success added product in " \
                                                                                    "basket not found "
 
-    def should_be_message_disappeared_after_adding_product_in_basket(self):
+    def should_be_disappeared_after_add_product_in_basket(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGES), "Message of Success added product in " \
                                                                                    "basket not found "
