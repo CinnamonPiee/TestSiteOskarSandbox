@@ -19,6 +19,22 @@ class MainPageLocators():
     NAVBAR_DROPDOWN_MENU_CLOTHING = (By.CSS_SELECTOR, ".dropdown-menu [href='/ru/catalogue/category/clothing_1/']")
     NAVBAR_DROPDOWN_MENU_BOOKS = (By.CSS_SELECTOR, ".dropdown-menu [href='/ru/catalogue/category/books_2/']")
     NAVBAR_DROPDOWN_MENU_OFFERS = (By.CSS_SELECTOR, ".dropdown-menu [href='/ru/offers/']")
+    SUCCESS_AUTH_MESSAGE = (By.CSS_SELECTOR, ".alertinner")
+
+
+class UserProfilePage():
+    MAIN_PAGE_LINK = (By.CSS_SELECTOR, ".container-fluid a")
+    USER_ACCOUNT_LINK = (By.CSS_SELECTOR, "[href='/ru/accounts/']")
+    NAV_PILLS = (By.CSS_SELECTOR, ".nav-pills")
+    PROFILE = (By.CSS_SELECTOR, "[href='/ru/accounts/profile/']")
+    ORDERS = (By.CSS_SELECTOR, "[href='/ru/accounts/orders/']")
+    ADDRESSES = (By.CSS_SELECTOR, "[href='/ru/accounts/addresses/']")
+    EMAILS = (By.CSS_SELECTOR, "[href='/ru/accounts/emails/']")
+    ALERTS = (By.CSS_SELECTOR, "[href='/ru/accounts/alerts/']")
+    NOTIFICATIONS_INBOX = (By.CSS_SELECTOR, "[href='/ru/accounts/notifications/inbox/']")
+    WISHLISTS = (By.CSS_SELECTOR, "[href='/ru/accounts/wishlists/']")
+    PILLS_INFO = (By.CSS_SELECTOR, ".col-md-9")
+# TODO Тут продолжить
 
 
 class LoginPageLocators():
@@ -28,6 +44,11 @@ class LoginPageLocators():
     REGISTER_FORM_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
     REGISTER_FORM_REPEAT_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password2")
     BTN_REGISTER = (By.CSS_SELECTOR, "[name='registration_submit']")
+    LOGIN_FORM_EMAIL = (By.CSS_SELECTOR, "#id_login-username")
+    LOGIN_FORM_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
+    BTN_LOGIN = (By.CSS_SELECTOR, "[name='login_submit']")
+    MAIN_PAGE_BREADCRUMBS_LINK = (By.CSS_SELECTOR, ".breadcrumb a")
+    DONT_REMEMBER_PASSWORD_LIND = (By.CSS_SELECTOR, "[href='/ru/password-reset/']")
 
 
 class ProductPageLocators:
@@ -41,3 +62,4 @@ class ProductPageLocators:
 class BasketPageLocators:
     EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner p")
     PRODUCTS_IN_BASKET = (By.CSS_SELECTOR, "#content_inner #basket_formset")
+    MAIN_PAGE_BREADCRUMBS_LINK = (By.CSS_SELECTOR, ".breadcrumb a")
