@@ -23,3 +23,8 @@ class ProductPageLocators:
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main p.price_color")
     PRODUCT_DESCRIPTION = (By.CSS_SELECTOR, "#product_description+p")
     SUCCESS_MESSAGES = (By.CSS_SELECTOR, ".alertinner strong")
+
+
+class BasketPageLocators:
+    ALERT_EMPTY_BASKET = (By.CSS_SELECTOR, "#content_inner p")
+    PRODUCT_IN_BASKET = (By.CSS_SELECTOR, "#content_inner #basket_formset")
