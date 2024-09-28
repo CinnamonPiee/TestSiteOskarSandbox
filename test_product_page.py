@@ -130,3 +130,4 @@ def test_guest_cant_see_success_message(browser):
     page = ProductPage(browser, link)
     page.open()
     page.should_be_dont_see_success_after_add_product_in_basket()
+    

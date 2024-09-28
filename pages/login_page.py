@@ -29,4 +29,3 @@ class LoginPage(BasePage):
         self.browser.find_element(*LoginPageLocators.REGISTER_FORM_PASSWORD).send_keys(password)
         self.browser.find_element(*LoginPageLocators.REGISTER_FORM_REPEAT_PASSWORD).send_keys(password)
         self.browser.find_element(*LoginPageLocators.BTN_REGISTER).click()
-

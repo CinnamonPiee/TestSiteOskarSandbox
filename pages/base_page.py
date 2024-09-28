@@ -1,4 +1,8 @@
-from selenium.common.exceptions import NoSuchElementException, TimeoutException, NoAlertPresentException
+from selenium.common.exceptions import (
+    NoSuchElementException, 
+    TimeoutException, 
+    NoAlertPresentException
+)
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
